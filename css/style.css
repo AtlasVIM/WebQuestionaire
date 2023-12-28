@@ -10,6 +10,7 @@
     background-color: black;
     height: 500px;
     display: flexbox;
+    border-radius: 10px;
 }
 
 #question {

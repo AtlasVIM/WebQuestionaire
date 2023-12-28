@@ -1,3 +1,5 @@
+
+
 $(document).ready( function(){
     submitButton();
     questionaireSequence.questionOne();
@@ -9,18 +11,18 @@ var answerSheet = {}
 
 var i = 0;
 
-function Question(question, prompt) {
+function Question(question, element) {
     this.question = question;
-    this.prompt = prompt;
+    this.element = element;
 }
 
 
 Question.prototype.show = function() {
-    this.prompt.text(this.question);
+    this.element.text(this.question);
 }
 
-function questionFactory(question, prompt) {
-    return new Question(question, prompt);
+function questionFactory(question, element) {
+    return new Question(question, element);
 }
 
 function submitButton() {
