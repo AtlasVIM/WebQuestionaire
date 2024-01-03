@@ -7,7 +7,7 @@ const externals = {}
 
 internals.questionNumber = 0;
 internals.questionArea = document.getElementById('question')
-internals.questionList = [{question: 'hi', answer:''}, {question: 'bye',answer:''}, {question: 'cringe', answer:''}
+internals.questionList = [{question: 'question 1', answer:''}, {question: 'question 2',answer:''}, {question: 'question 3', answer:''}
 ]
 
 
