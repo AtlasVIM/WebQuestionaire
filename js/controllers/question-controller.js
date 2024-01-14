@@ -1,25 +1,24 @@
 import questionView from '../view/question-view.js'
-import questionModel from '../models/question.js'
 import saveService from '../services/save-service.js'
+import questionList from'../models/question-list.js'
 
 const internals = {}
 const externals = {}
 
 internals.questionNumber = 0;
 internals.questionArea = document.getElementById('question')
-internals.questionList = [{question: 'question 1', answer:''}, {question: 'question 2',answer:''}, {question: 'question 3', answer:''}
-]
 
 
 internals.bindButton = function() {
     if(internals.questionNumber <= 0) {
             document.getElementById('back-button').disabled = true;
+            document.getElementById('download-button').disabled = true;
     }
 // Back-button Binding
     document.getElementById('back-button').addEventListener( 'click',() => {
         console.log(internals.questionNumber);
 
-    if(internals.questionNumber < 0) {
+    if(internals.questionNumber = 0) {
             document.getElementById('back-button').disabled = true;
     }
 
@@ -42,15 +41,15 @@ internals.bindButton = function() {
 
         
         try {
-            internals.questionList[internals.questionNumber].answer = document.getElementById('answer-input').value;
+            questionList[internals.questionNumber].answer = document.getElementById('answer-input').value;
             
-            console.log(internals.questionList[internals.questionNumber].answer);
+            console.log(questionList[internals.questionNumber].answer);
             
-            saveService.save(internals.questionList[internals.questionNumber], internals.questionNumber);
+            saveService.save(questionList[internals.questionNumber], internals.questionNumber);
 
 
-            if(internals.questionNumber < internals.questionList.length) {
-                console.log(internals.questionNumber + ' ' + internals.questionList.length);
+            if(internals.questionNumber < questionList.length) {
+                console.log(internals.questionNumber + ' ' + questionList.length);
                 internals.questionNumber++;
             } else {
                 console.log('no more questions');
@@ -66,20 +65,38 @@ internals.bindButton = function() {
         
         } catch (e) {
             console.log(e.stack);
-            alert('There is no next Question')
+            alert('All Answers Submitted')
         };
 
+    })
+
+    //Download Button binding
+    document.getElementById('download-button').addEventListener('click', ()=>{
+        try{
+        saveService.downloadAnswerSheet();
+        } catch (e) {
+        console.log(e.stack);
+        }
     })
 }
 
 internals.getNextQuestion = function(i) {
     
-   questionView.render(internals.questionList[i])
+   questionView.render(questionList[i])
+   if (i >= questionList.length-1) {
+    document.getElementById('download-button').disabled = false;
+   } else {
+    document.getElementById('download-button').disabled = true;
+   }
+   if ( i = 0) {
+    document.getElementById('back-button').disabled = true;
+   } else {
+    document.getElementById('back-button').disabled = false;
+   }
 }
 
 
 externals.start = function()   {
-    console.log('hi');
     internals.bindButton();
     internals.getNextQuestion(0)
 
