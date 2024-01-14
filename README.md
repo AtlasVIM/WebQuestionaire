@@ -4,4 +4,5 @@ Whenever you click submit your answers are saved, this allows you to see your st
 I used a very simple MVC structure, although I don't think it was entirely necessary as the program doesn't use multiple routers, controllers, services, models or views, though it was useful for encapsulation and delegation purposes.
 
 
-I uploaded it to a aws server -> http://character.creation.questionaire.s3-website.eu-north-1.amazonaws.com/#Question 
+I uploaded it to an aws server -> http://character.creation.questionaire.s3-website.eu-north-1.amazonaws.com/#Question
+Works fine on PC but may have some issues running on mobile, depending on the browser used, works on Samsung Internet but not Chrome.
