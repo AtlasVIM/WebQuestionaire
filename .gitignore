@@ -1,0 +1,56 @@
+# Node.js related
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# User specific files
+*.log
+*.iml
+
+# Compiled output
+/dist/
+/build/
+
+# Dependency directories
+/bower_components/
+
+# Webpack
+/node_modules/
+/dist/
+
+# Visual Studio Code directory
+.vscode/
+
+# Sublime Text project files
+*.sublime-project
+*.sublime-workspace
+
+# IDE files
+.idea/
+
+# Mac OS X Finder files
+.DS_Store
+
+# Windows thumbnails
+Thumbs.db
+
+# Sass
+.sass-cache/
+
+# Compiled CSS
+*.css.map
+
+# Compiled TypeScript
+*.tsbuildinfo
+
+# Jest coverage
+/coverage/
+
+# Customizable
+custom-file.txt
